@@ -1,0 +1,258 @@
+@import 'partials/bootstrap.grid';
+@import 'partials/animate';
+@import 'partials/hover';
+@import 'partials/owlcarousel';
+
+[v-cloak] {
+  display: none;
+}
+
+.jcf-checkbox {
+  vertical-align: middle;
+}
+
+.data-panel {
+  height: auto !important;
+  margin-top: 0;
+}
+
+.data-panel__inside {
+  display: none;
+}
+
+.data-panel .background {
+  position: relative;
+}
+
+.data-panel+footer {
+  margin-top: 0 !important;
+}
+
+.css_page {
+  background: #F2F7F8;
+
+  .ctaBtn.ctaBtn--secondaryOnImage {
+    color: #189bb0;
+    background: transparent;
+    border-color: #189bb0;
+    margin-left: 15px;
+  }
+}
+
+.css_testimonials {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 15px;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .filter_label {
+    font-family: SourceSansPro-Bold, arial, sans-serif;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+
+  .filtering_header {
+    background: #189bb0;
+    padding: 20px 30px;
+    margin-right: 15px;
+    color: #ffffff;
+    font-family: SourceSansPro-Regular, arial, sans-serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .filtering_options {
+    background: #ffffff;
+    padding: 15px 30px 30px;
+    margin-right: 15px;
+  }
+
+  .grid-item {
+    background: #ffffff;
+    border-top: 4px solid #189bb0;
+    padding: 15px;
+    margin: 0 15px 30px;
+    padding: 30px;
+  }
+
+  .grid-item-quote,
+  .grid-item-shortquote {
+    font-family: SourceSansPro-Light, arial, sans-serif;
+    font-size: 1.75rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .grid-item-quote {
+    display: none;
+  }
+
+  .grid-item-middle {
+    font-family: SourceSansPro-Regular, arial, sans-serif;
+    margin-top: 15px;
+  }
+
+  .meta-links {
+    margin-top: 15px;
+  }
+
+  .read-more {
+    font-family: SourceSansPro-SemiBold, helvetica, arial, sans-serif;
+    font-size: 1rem;
+    color: #189bb0;
+    margin-right: 10px;
+
+    &::after {
+      font-family: 'icomoon';
+      content: "\E909";
+      font-size: 0.675rem;
+      margin-left: 10px;
+    }
+  }
+}
+
+.css_jumbotron {
+  background: #212226;
+
+  .slide-1 {
+    background: #ebebeb url("https://www2.arccorp.com/globalassets/homepage/redesign/quotes/quote2.jpg") right center no-repeat;
+    background-size: contain;
+
+    h2.block-header,
+    p {
+      color: #212226 !important;
+    }
+  }
+
+  .slide-2 {
+    background: #ebe6e3 url("https://www2.arccorp.com/globalassets/homepage/redesign/quotes/quote9.jpg") right center no-repeat;
+    background-size: contain;
+
+    h2.block-header,
+    p {
+      color: #212226 !important;
+    }
+  }
+
+  .slide-3 {
+    background: #242529 url("https://www2.arccorp.com/globalassets/about-us/our-data/redesign/dataSection1.jpg?1") right center no-repeat;
+    background-size: cover;
+  }
+
+  .owl-carousel.owl-theme .owl-dots .owl-dot span {
+    background: #bbbbbb;
+    color: #565350;
+    border-radius: 0;
+    width: 40px;
+    height: 6px;
+    margin: 5px 7px 5px 0;
+  }
+
+  .home-page .owl-carousel .owl-theme .owl-dots .owl-dot:hover span,
+  .owl-carousel.owl-theme .owl-dots .owl-dot.active span {
+    background: #189bb0;
+  }
+
+  .owl-jumbotron {
+    .owl-dots {
+      bottom: 35px;
+      position: absolute;
+      right: 51%;
+      width: 570px;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    .owl-nav {
+      display: none;
+    }
+
+    .owl-nav {
+      display: none;
+    }
+  }
+
+  .owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+  }
+
+  .owl-carousel {
+    .carousel-slide {
+      margin: 0 auto;
+      display: table;
+      color: #ffffff;
+      font-family: SourceSansPro-Regular, helvetica, arial, sans-serif;
+      padding: 0;
+      height: 500px;
+      vertical-align: middle;
+      max-width: 1170px;
+      width: 100%;
+    }
+
+    .carousel-slide-content {
+      position: relative;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: left;
+      max-width: 700px;
+      width: 100%;
+      z-index: 3;
+
+      .block-header {
+        font-family: SourceSansPro-Light, helvetica, arial, sans-serif;
+        font-size: 2.25rem;
+        color: #ffffff;
+        text-align: left;
+        margin-top: 10px;
+      }
+
+      p {
+        font-family: RobotoSlab-Light, SourceSansPro-Regular, helvetica, arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.25rem;
+      }
+    }
+
+    .slide-11 {
+      background: url("https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel11.jpg") center center no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+input[type=checkbox] {
+  display: none;
+}
+/* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-size: 20px;
+}
+
+input[type=checkbox] + label:before {
+  content: "\f0c8";
+}
+/* unchecked icon */
+input[type=checkbox] + label:before {
+  letter-spacing: 10px;
+  vertical-align: middle;
+}
+/* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before {
+  content: "\f14a";
+  color: #189bb0;
+}
+/* checked icon */
+input[type=checkbox]:checked + label:before {
+  letter-spacing: 10px;
+  vertical-align: middle;
+}
+/* allow space for check mark */
