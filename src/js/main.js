@@ -35,7 +35,7 @@ var data = [{
     caseStudy: "https://www2.arccorp.com/products-participation/case-studies/aeroflot-minimizes-debit-memo-using-memo-analyzer-rrs/",
     productLink: "https://www2.arccorp.com/products-participation/products/revenue-recovery-service/",
     product: "Revenue Recovery Services",
-    productName: "Revenue Recovery Services"
+    productName: "Revenue Recovery Service"
   },
 
   {
@@ -45,9 +45,9 @@ var data = [{
     type: "agency",
     quote: "I don't think travel agencies completely understand the resources ARC provides and the vast knowledge their staff has in the travel industry. Since we are so new to the industry, having a trusted partner to guide us is very powerful.",
     shortQuote: "Since we are so new to the industry, having a trusted partner to guide us is very powerful.",
-    productLink: "https://www2.arccorp.com/products-participation/travel-agencies/become-an-arc-accredited-agent-rrs/",
+    productLink: "https://www2.arccorp.com/products-participation/travel-agencies/become-an-arc-accredited-agent/",
     product: "resources ARC provides",
-    productName: "ARC Accredition"
+    productName: "ARC Accreditation"
   },
 
   {
@@ -392,7 +392,7 @@ var data = [{
     shortQuote: "...increased transparency into our debit memo trends allows us to pinpoint and resolve issues quicker.",
     productLink: "https://www2.arccorp.com/products-participation/products/memo-manager/",
     product: "ARC Memo Manager",
-    productName: "Memo Manager</ARC>"
+    productName: "ARC Memo Manager"
   },
   {
     name: "Michael Wang",
@@ -447,7 +447,7 @@ var data = [{
     shortQuote: "SAS has used ARC's revenue recovery program for years to streamline the collection of agency debit memos.",
     productLink: "https://www2.arccorp.com/products-participation/products/revenue-recovery-service/",
     product: "revenue recovery program",
-    productName: "Revenue Recovery Program"
+    productName: "Revenue Recovery Service"
   },
   {
     name: "Peter E. Pincus",
@@ -546,7 +546,7 @@ var data = [{
     shortQuote: "RRS helps us preserve our agency relationships - handling the recovery process, on our behalf, with care.",
     productLink: "https://www2.arccorp.com/products-participation/carriers/carrier-participation/",
     product: "ARC",
-    productName: "Airline Partcipation"
+    productName: "Airline Participation"
   },
   {
     name: "Frederico Gonzalez",
@@ -603,7 +603,7 @@ function escapeHTML(unsafe) {
 
 function linkReplace(quote, product, productLink) {
   var pattern = new RegExp(product, "g");
-  productLink = '<a href="' + productLink + '">' + product + '</a>';
+  productLink = '<a href="' + productLink + '?utm_source=customer_success_stories">' + product + '</a>';
   return quote.replace(pattern, productLink);
 }
 
@@ -621,13 +621,12 @@ for (var i = 0; i < data.length; i++) {
 
   var idName = escapeHTML(data[i].name).replace(" ", "-")
 
-  //append testimonials
-  $(".grid").append('<div class="data-row item-' + i + '"><div class="testimonials-quote">"' + linkReplace(escapeHTML(data[i].quote), data[i].product, data[i].productLink).replace('My ARC', '<a href="https://myarc.arccorp.com">My ARC</a>').replace("Memo Manager", "<a href='https://www2.arccorp.com/products-participation/products/memo-manager/'>Memo Manager</a>") + '"</div>' + caseStudy + learnMore + '<div class="testimonials-meta"><h2 class="leadin-text">' + escapeHTML(data[i].name) + '</h2> ' + escapeHTML(data[i].title) + ', ' + escapeHTML(data[i].company) + ' <br/> </div></div>');
-
   //append grid
-  $(".testimonials_container").append('<div class="grid-item ' + data[i].type + ' ' + data[i].productName.replace(" ", "-") + '" data-id="' + i + '"><a id="' + i + '" class="anchor"></a><div class="grid-item-inner"> <div class="grid-item-shortquote">"' + escapeHTML(data[i].shortQuote) + '"</div><div class="grid-item-quote">"' + escapeHTML(data[i].quote) +
+  $(".testimonials_container").append('<div class="grid-item ' + data[i].type + ' ' + data[i].productName.replace(/ /g, "-") + '" data-id="' + i + '"><a id="' + i + '" class="anchor"></a><div class="grid-item-inner"> <div class="grid-item-shortquote">"' +
+    linkReplace(escapeHTML(data[i].shortQuote), data[i].product, data[i].productLink).replace('My ARC', '<a href="https://myarc.arccorp.com">My ARC</a>').replace("Memo Manager", "<a href='https://www2.arccorp.com/products-participation/products/memo-manager/'>Memo Manager</a>") + '"</div><div class="grid-item-quote">"' +
+    linkReplace(escapeHTML(data[i].quote), data[i].product, data[i].productLink).replace('My ARC', '<a href="https://myarc.arccorp.com">My ARC</a>').replace("Memo Manager", "<a href='https://www2.arccorp.com/products-participation/products/memo-manager/'>Memo Manager</a>") +
     '"</div><div class="grid-item-middle"><strong>' + escapeHTML(data[i].name) +
-    '</strong> <em>' + escapeHTML(data[i].title) + '</em> <span style="color: #999999;">' + escapeHTML(data[i].company) + '</span></div><div class="meta-links">' + productLink + caseStudyGrid + '</div></div></div>');
+    '</strong> <em>' + escapeHTML(data[i].title) + '</em> <span style="color: #999999;">' + escapeHTML(data[i].company) + '</span></div><div class="meta-links">' + productLink + caseStudyGrid + '</div><div class="grid-tags"><div class="grid-tag">' + data[i].type.replace('carrier', 'Airlines').replace('edu', 'Enterprise Data Users') + '</div><div class="grid-tag">' + data[i].productName + '</div></div></div></div>');
 
 }
 
@@ -638,12 +637,43 @@ $('.grid-item-shortquote, .grid-item-quote').click(function() {
 });
 
 var checkedArray = [];
+var productNames = [];
 
-function toggleFilter(){
-  if(checkedArray.length == 0){
-    $(".grid-item").show();
+//loop through data and get all filters
+function initProductFilters() {
+  var template = ""
+
+  for (var i = 0; i < data.length; i++) {
+    var productText = data[i].productName;
+    var productVal = data[i].productName.replace(/ /g, "-");
+
+    if (productNames.indexOf(productText) <= -1) {
+      productNames.push(productText);
+    }
+
   }
-  else {
+  console.log(productNames);
+
+  productNames.sort().reverse();
+
+  for (var i = 0; i < productNames.length; i++) {
+
+    var productVal = productNames[i].replace(/ /g, "-");
+    var template = '<div class="filter_checkbox"><input class="customer_checkbox" type="checkbox" id="' + productVal + '" name="' + productVal + '" value="' + productVal + '"> <label for="' + productVal + '">' + productNames[i] + '</label></div>';
+    $('.product-filters').after(template);
+
+  }
+
+
+
+  jcf.replaceAll();
+
+}
+
+function toggleFilter() {
+  if (checkedArray.length == 0) {
+    $(".grid-item").show();
+  } else {
     $(".grid-item").hide();
     for (var i = 0; i < checkedArray.length; i++) {
       $("." + checkedArray[i]).show();
@@ -652,11 +682,13 @@ function toggleFilter(){
 
 }
 
+initProductFilters();
+
 $(document).ready(function() {
-  $('.filter_checkbox').click(function() {
-    var checkboxName = $(this).find('.customer_checkbox').val();
+  $('.customer_checkbox').click(function() {
+    var checkboxName = $(this).closest('.filter_checkbox').find('.customer_checkbox').val();
     //becomes active
-    if (!$(this).find('span').hasClass("jcf-checked")) {
+    if (!$(this).closest('.filter_checkbox').find('span').hasClass("jcf-checked") && checkedArray.indexOf(checkboxName) <= -1) {
       checkedArray.push(checkboxName);
     } else {
       for (var i = 0; i < checkedArray.length; i++) {
@@ -666,6 +698,19 @@ $(document).ready(function() {
       }
 
     }
+    console.log(checkedArray);
     toggleFilter();
   });
+
+  //check relevent checkboxes based off url filters
+  var urlParams = window.location.search;
+
+  if(urlParams.indexOf("filters") > -1){
+    var filters = urlParams.split("filters=")[1].split(',');
+    for(var i = 0; i < filters.length; i++){
+      $("[value='" + filters[i] + "']").click();
+    }
+
+  }
+
 })

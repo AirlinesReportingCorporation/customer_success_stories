@@ -85,10 +85,38 @@
     font-size: 1.75rem;
     color: #000000;
     cursor: pointer;
+
+    a {
+      font-family: SourceSansPro-Regular, arial, sans-serif;
+    }
+  }
+
+  .grid-item-shortquote {
+    &::after {
+      margin-top: 5px;
+      color: #96BE3C;
+      display: block;
+      font-family: SourceSansPro-Bold, arial, sans-serif;
+      font-size: 0.7rem;
+      content: 'View More';
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
   }
 
   .grid-item-quote {
     display: none;
+
+    &::after {
+      margin-top: 5px;
+      color: #96BE3C;
+      display: block;
+      font-family: SourceSansPro-Bold, arial, sans-serif;
+      font-size: 0.7rem;
+      content: 'View Less';
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
   }
 
   .grid-item-middle {
@@ -98,6 +126,26 @@
 
   .meta-links {
     margin-top: 15px;
+  }
+
+  .grid-tags {
+    margin-top: 10px;
+
+    .grid-tag {
+      display: inline-block;
+      background: #b7b7b7;
+      color: #ffffff;
+      margin-right: 5px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      min-height: auto;
+      font-family: SourceSansPro-Regular, arial, sans-serif;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      border-radius: 0.2rem;
+      cursor: default;
+    }
   }
 
   .read-more {
@@ -230,6 +278,7 @@ input[type=checkbox] {
   display: none;
 }
 /* to hide the checkbox itself */
+
 input[type=checkbox] + label:before {
   font-family: "Font Awesome 5 Free";
   display: inline-block;
@@ -240,17 +289,18 @@ input[type=checkbox] + label:before {
   content: "\f0c8";
 }
 /* unchecked icon */
+
 input[type=checkbox] + label:before {
   letter-spacing: 10px;
   vertical-align: middle;
 }
 /* space between checkbox and label */
-
 input[type=checkbox]:checked + label:before {
   content: "\f14a";
   color: #189bb0;
 }
 /* checked icon */
+
 input[type=checkbox]:checked + label:before {
   letter-spacing: 10px;
   vertical-align: middle;
