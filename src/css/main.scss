@@ -31,7 +31,7 @@
 .css_page {
   background: #F2F7F8;
 
-  .ctaBtn.ctaBtn--secondaryOnImage {
+  .ctaBtn.ctaBtn--secondary {
     color: #189bb0;
     background: transparent;
     border-color: #189bb0;
@@ -40,7 +40,7 @@
 }
 
 .css_testimonials {
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 60px 15px;
 
@@ -66,17 +66,91 @@
   }
 
   .filtering_options {
+    margin: 0 15px 30px;
+  }
+
+  .filter-dropdowns {
+    position: relative;
+  }
+
+  .filters-title {
+    font-family: SourceSansPro-Bold, arial, sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .selectBox {
+    display: inline-block;
     background: #ffffff;
-    padding: 15px 30px 30px;
-    margin-right: 15px;
+    color: #189bb0;
+    font-family: SourceSansPro-Black, arial, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 250px;
+    padding: 20px;
+    position: relative;
+    margin-right: 30px;
+    box-shadow: rgba(0,0,0,0.1) 0 29px 30px -35px;
+
+    &.arrowDown::after {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      margin-top: 5px;
+      color: #189bb0;
+      display: inline-block;
+      font-family: 'Font Awesome\ 5 Free';
+      font-weight: 900;
+      font-size: 1rem;
+      margin-left: 5px;
+      content: '\f078';
+    }
+  }
+
+  .selectOptions {
+    top: 60px;
+    left: 0;
+    font-family: SourceSansPro-Regular, arial, sans-serif;
+    text-transform: uppercase;
+    display: none;
+    background: #ffffff;
+    border-top: 1px solid #f6f6f6;
+    position: absolute;
+    width: 250px;
+    z-index: 3;
+    box-shadow: rgba(0,0,0,0.1) 0 29px 30px -28px;
+  }
+
+  .selectOption {
+    padding: 20px;
+    text-transform: capitalize;
+    font-family: SourceSansPro-SemiBold, arial ,sans-serif;
+
+    &:hover {
+      background: #f6f6f6;
+    }
+  }
+
+  .productBox {
+    width: auto;
+    min-width: 250px;
+    padding-right: 40px;
+
+    .selectOptions {
+      max-height: 300px;
+      overflow-y: auto;
+    }
   }
 
   .grid-item {
-    background: #ffffff;
+    padding-top: 0;
+  }
+
+  .grid-item-inner {
     border-top: 4px solid #189bb0;
-    padding: 15px;
-    margin: 0 15px 30px;
-    padding: 30px;
+    background: #ffffff;
+    padding-top: 30px;
+    margin: 15px 15px 45px;
+    box-shadow: rgba(0,0,0,0.1) 0 29px 30px -33px;
   }
 
   .grid-item-quote,
@@ -94,13 +168,13 @@
   .grid-item-shortquote {
     &::after {
       margin-top: 5px;
-      color: #96BE3C;
-      display: block;
-      font-family: SourceSansPro-Bold, arial, sans-serif;
-      font-size: 0.7rem;
-      content: 'View More';
-      text-transform: uppercase;
-      text-decoration: underline;
+      color: #189bb0;
+      display: inline-block;
+      font-family: 'Font Awesome\ 5 Free';
+      font-weight: 900;
+      font-size: 1rem;
+      margin-left: 5px;
+      content: '\f078';
     }
   }
 
@@ -109,13 +183,22 @@
 
     &::after {
       margin-top: 5px;
-      color: #96BE3C;
-      display: block;
-      font-family: SourceSansPro-Bold, arial, sans-serif;
-      font-size: 0.7rem;
-      content: 'View Less';
-      text-transform: uppercase;
-      text-decoration: underline;
+      color: #189bb0;
+      display: inline-block;
+      font-family: 'Font Awesome\ 5 Free';
+      font-weight: 900;
+      font-size: 1rem;
+      margin-left: 5px;
+      content: '\f077';
+    }
+  }
+
+  .noArrow {
+    .grid-item-quote,
+    .grid-item-shortquote {
+      &::after {
+        display: none;
+      }
     }
   }
 
@@ -125,27 +208,41 @@
   }
 
   .meta-links {
-    margin-top: 15px;
+    margin-top: 10px;
+  }
+
+  .grid-item-middle,
+  .grid-item-quote,
+  .grid-item-shortquote,
+  .grid-tags,
+  .meta-links {
+    padding: 0 30px;
   }
 
   .grid-tags {
+    color: #96BE3C;
+    border-top: #ddd 1px solid;
     margin-top: 10px;
+    padding: 15px 30px;
+    font-family: SourceSansPro-Regular, arial, sans-serif;
+    font-size: 0.875rem;
+    text-transform: uppercase;
 
     .grid-tag {
       display: inline-block;
-      background: #b7b7b7;
-      color: #ffffff;
-      margin-right: 5px;
-      margin-bottom: 10px;
+      color: #96BE3C;
       text-transform: uppercase;
       min-height: auto;
       font-family: SourceSansPro-Regular, arial, sans-serif;
-      padding: 0.25rem 0.5rem;
       font-size: 0.875rem;
       line-height: 1.5;
       border-radius: 0.2rem;
       cursor: default;
     }
+  }
+
+  .ctaBtn {
+    margin-right: 10px;
   }
 
   .read-more {
@@ -278,7 +375,6 @@ input[type=checkbox] {
   display: none;
 }
 /* to hide the checkbox itself */
-
 input[type=checkbox] + label:before {
   font-family: "Font Awesome 5 Free";
   display: inline-block;
@@ -289,18 +385,17 @@ input[type=checkbox] + label:before {
   content: "\f0c8";
 }
 /* unchecked icon */
-
 input[type=checkbox] + label:before {
   letter-spacing: 10px;
   vertical-align: middle;
 }
 /* space between checkbox and label */
+
 input[type=checkbox]:checked + label:before {
   content: "\f14a";
   color: #189bb0;
 }
 /* checked icon */
-
 input[type=checkbox]:checked + label:before {
   letter-spacing: 10px;
   vertical-align: middle;

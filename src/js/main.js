@@ -153,7 +153,7 @@ var data = [{
     productLink: "https://www2.arccorp.com/products-participation/travel-agencies/agency-participation/",
     product: "ARC participant",
     learnMore: "https://www2.arccorp.com/products-participation/travel-agencies/agency-participation/",
-    productName: "Agency Participation"
+    productName: "ARC Accreditation"
   },
   {
     name: "Maria Polanco",
@@ -246,7 +246,7 @@ var data = [{
     productLink: "https://www2.arccorp.com/products-participation/travel-agencies/agency-participation/",
     product: "benefit ARC brings",
     learnMore: "https://www2.arccorp.com/products-participation/travel-agencies/agency-participation/",
-    productName: "Agency Participation"
+    productName: "ARC Accreditation"
   },
   {
     name: "Gary Ballew",
@@ -358,8 +358,8 @@ var data = [{
     quote: "Aligning the carriers on debit memo categorization will help us better understand and analyze why debit memos are issued, so we can allocate the necessary resources to reduce their frequency. This is a significant milestone for the industry and another great example of how the DMWG, with ARC's leadership and guidance, has accelerated positive changes for the industry.",
     shortQuote: "...DMWG, with ARC's leadership and guidance, has accelerated positive changes for the industry.",
     productLink: "https://www2.arccorp.com/support-training/debit-memo-working-group-dmwg/",
-    product: "DMWG",
-    productName: "DMWG"
+    product: "Debit Memos",
+    productName: "Debit Memos"
   },
   {
     name: "Shannon Smith",
@@ -568,7 +568,7 @@ var data = [{
     shortQuote: "Since having ARC's Memo Analyzer, we have seen debit memos drop drastically...",
     productLink: "https://www2.arccorp.com/products-participation/products/memo-analyzer-for-agencies/",
     product: "Memo Analyzer",
-    productName: "Memo Analyzer"
+    productName: "Memo Analyzer for Agencies"
   },
   {
     name: "Veronique Amato",
@@ -613,20 +613,22 @@ for (var i = 0; i < data.length; i++) {
 
   var learnMore = (data[i].learnMore != null) ? '<a class="ctaBtn ctaBtn--secondary" style="margin: 0px 40px 20px 40px;" href="' + data[i].learnMore + '">Learn More</a>' : ' ';
 
-  var caseStudyGrid = (data[i].caseStudy != null) ? '<a class="read-more" href="' + data[i].caseStudy + '?utm_source=customer_success_stories">Download Case Study</a>' : ' ';
+  var caseStudyGrid = (data[i].caseStudy != null) ? '<a class="ctaBtn ctaBtn--secondary" href="' + data[i].caseStudy + '?utm_source=customer_success_stories">Download Case Study</a>' : ' ';
 
-  var learnMoreGrid = (data[i].learnMore != null) ? '<a class="read-more" href="' + data[i].learnMore + '">Learn More</a>' : ' ';
+  var learnMoreGrid = (data[i].learnMore != null) ? '<a class="ctaBtn" href="' + data[i].learnMore + '">Learn More</a>' : ' ';
 
-  var productLink = (data[i].productLink != null) ? '<a class="read-more" href="' + data[i].productLink + '?utm_source=customer_success_stories">' + data[i].productName + '</a>' : ' ';
+  var productLink = (data[i].productLink != null) ? '<a class="ctaBtn" href="' + data[i].productLink + '?utm_source=customer_success_stories">' + data[i].productName + '</a>' : ' ';
 
-  var idName = escapeHTML(data[i].name).replace(" ", "-")
+  var idName = escapeHTML(data[i].name).replace(" ", "-");
+
+  var sameQuote = data[i].shortQuote.length == data[i].quote.length;
 
   //append grid
-  $(".testimonials_container").append('<div class="grid-item ' + data[i].type + ' ' + data[i].productName.replace(/ /g, "-") + '" data-id="' + i + '"><a id="' + i + '" class="anchor"></a><div class="grid-item-inner"> <div class="grid-item-shortquote">"' +
+  $(".testimonials_container").append('<div class="col-md-12 grid-item ' + (sameQuote ? 'noArrow' : '') + " " + data[i].type + ' ' + data[i].productName.replace(/ /g, "-") + '" data-id="' + i + '"><a id="' + i + '" class="anchor"></a><div class="grid-item-inner"> <div class="grid-item-shortquote">"' +
     linkReplace(escapeHTML(data[i].shortQuote), data[i].product, data[i].productLink).replace('My ARC', '<a href="https://myarc.arccorp.com">My ARC</a>').replace("Memo Manager", "<a href='https://www2.arccorp.com/products-participation/products/memo-manager/'>Memo Manager</a>") + '"</div><div class="grid-item-quote">"' +
     linkReplace(escapeHTML(data[i].quote), data[i].product, data[i].productLink).replace('My ARC', '<a href="https://myarc.arccorp.com">My ARC</a>').replace("Memo Manager", "<a href='https://www2.arccorp.com/products-participation/products/memo-manager/'>Memo Manager</a>") +
     '"</div><div class="grid-item-middle"><strong>' + escapeHTML(data[i].name) +
-    '</strong> <em>' + escapeHTML(data[i].title) + '</em> <span style="color: #999999;">' + escapeHTML(data[i].company) + '</span></div><div class="meta-links">' + productLink + caseStudyGrid + '</div><div class="grid-tags"><div class="grid-tag">' + data[i].type.replace('carrier', 'Airlines').replace('edu', 'Enterprise Data Users') + '</div><div class="grid-tag">' + data[i].productName + '</div></div></div></div>');
+    '</strong> <em>' + escapeHTML(data[i].title) + '</em> <span style="color: #999999;">' + escapeHTML(data[i].company) + '</span></div><div class="meta-links">' + productLink + caseStudyGrid + '</div><div class="grid-tags"><div class="grid-tag">' + data[i].type.replace('carrier', 'Airlines').replace('edu', 'Enterprise Data Users') + '</div> / <div class="grid-tag">' + data[i].productName + '</div></div></div></div>');
 
 }
 
@@ -636,12 +638,12 @@ $('.grid-item-shortquote, .grid-item-quote').click(function() {
   $(this).parent().find('.grid-item-quote').toggle();
 });
 
-var checkedArray = [];
+var checkedArray = ["", ""];
 var productNames = [];
 
 //loop through data and get all filters
 function initProductFilters() {
-  var template = ""
+  var template = "";
 
   for (var i = 0; i < data.length; i++) {
     var productText = data[i].productName;
@@ -652,32 +654,74 @@ function initProductFilters() {
     }
 
   }
-  console.log(productNames);
 
-  productNames.sort().reverse();
+  productNames.sort();
 
   for (var i = 0; i < productNames.length; i++) {
 
     var productVal = productNames[i].replace(/ /g, "-");
     var template = '<div class="filter_checkbox"><input class="customer_checkbox" type="checkbox" id="' + productVal + '" name="' + productVal + '" value="' + productVal + '"> <label for="' + productVal + '">' + productNames[i] + '</label></div>';
     $('.product-filters').after(template);
+    var template2 = '<div class="selectOption" id="' + productVal + '">' + productNames[i] + '</div>';
+    $('.productBox .selectOptions').append(template2);
 
   }
-
-
 
   jcf.replaceAll();
 
 }
 
 function toggleFilter() {
-  if (checkedArray.length == 0) {
+
+  //empty show everything
+  if (checkedArray[0] == "" && checkedArray[1] == "") {
     $(".grid-item").show();
-  } else {
+    $('.productBox .selectOption').show();
+  }
+  // only customer type
+  else if (checkedArray[0].length > 0 && checkedArray[1] == "") {
     $(".grid-item").hide();
-    for (var i = 0; i < checkedArray.length; i++) {
-      $("." + checkedArray[i]).show();
+    $("." + checkedArray[0]).show();
+    if (checkedArray[0] == "agency") {
+      $('.productBox .selectOption').hide();
+
+      $('#Agency-BI').show();
+      $('#Aria').show();
+      $('#ARC-Specialist-Training').show();
+      $('#Memo-Analyzer-for-Agencies').show();
+      $('#TASF').show();
+      $('#ARC-Accreditation').show();
+      $("#Custom-Reports").show();
+    } else if (checkedArray[0] == "carrier") {
+      $('.productBox .selectOption').hide();
+
+      $('#AeroGram').show();
+      $('#Airline-BI').show();
+      $('#Direct-Data-Solutions').show();
+      $('#Memo-Analyzer').show();
+      $('#Memo-Analyzer-for-Airlines').show();
+      $('#Revenue-Recovery-Services').show();
+      $('#Settlement').show();
+    } else if (checkedArray[0] == "edu") {
+      $('.productBox .selectOption').hide();
+
+      $('#AeroGram').show();
+      $("#Custom-Reports").show();
+      $("#Global-Agency-Pro").show();
+      $("#Market-Locator").show();
     }
+
+    $(".filtering_options .selectBox .selectOptions").hide();
+  }
+  // only product type
+  else if (checkedArray[1].length > 0 && checkedArray[0] == "") {
+    $(".grid-item").hide();
+    $("." + checkedArray[1]).show();
+  }
+  //both cusotmer and product type
+  else {
+    $(".grid-item").hide();
+    $("." + checkedArray[0] + "." + checkedArray[1]).show();
   }
 
 }
@@ -685,31 +729,69 @@ function toggleFilter() {
 initProductFilters();
 
 $(document).ready(function() {
-  $('.customer_checkbox').click(function() {
-    var checkboxName = $(this).closest('.filter_checkbox').find('.customer_checkbox').val();
-    //becomes active
-    if (!$(this).closest('.filter_checkbox').find('span').hasClass("jcf-checked") && checkedArray.indexOf(checkboxName) <= -1) {
-      checkedArray.push(checkboxName);
-    } else {
-      for (var i = 0; i < checkedArray.length; i++) {
-        if (checkedArray[i] == checkboxName) {
-          checkedArray.splice(i, 1);
-        }
+
+  $(document).click(function(e) {
+    var target = $(e.target);
+
+    //click to expand box
+    if (target.hasClass('selectBox')) {
+      $(".productBox .selectOptions").hide();
+      $(".customerBox .selectOptions").hide();
+      target.find('.selectOptions').toggle();
+    } else if (target.hasClass('selectName')) {
+      $(".productBox .selectOptions").hide();
+      $(".customerBox .selectOptions").hide();
+      target.parent().find('.selectOptions').toggle();
+    } else if (target.hasClass('selectOption') && target.closest('.customerBox').length) {
+      var checkboxName = target.prop('id').replace("-filter", "");
+      checkedArray = ["", ""];
+
+      if (checkboxName != "viewall") {
+        $('.customerBox .selectName').text(target.text());
+        checkedArray[0] = checkboxName;
+      } else {
+        $('.customerBox .selectName').text("Customer Type");
+      }
+      $('.productBox .selectName').text("Product Name");
+
+
+      $(".productBox .selectOptions").hide();
+      $(".customerBox .selectOptions").hide();
+      toggleFilter();
+
+    } else if (target.hasClass('selectOption') && target.closest('.productBox').length) {
+      var checkboxName = target.prop('id').replace("-filter", "");
+
+      if (checkboxName != "viewlallproduct") {
+        $('.productBox .selectName').text(target.text());
+        checkedArray[1] = checkboxName;
+
+      } else {
+        $('.productBox .selectName').text("Product Name");
+
+        checkedArray[1] = "";
       }
 
+      $(".productBox .selectOptions, .customerBox .selectOptions").hide();
+      $(".selectOptions").hide();
+      toggleFilter();
+    } else {
+      if ($('.selectOptions').is(':visible')) {
+        $('.selectOptions').hide();
+      }
     }
-    console.log(checkedArray);
-    toggleFilter();
+
   });
 
   //check relevent checkboxes based off url filters
   var urlParams = window.location.search;
 
-  if(urlParams.indexOf("filters") > -1){
+  if (urlParams.indexOf("filters") > -1) {
     var filters = urlParams.split("filters=")[1].split(',');
-    for(var i = 0; i < filters.length; i++){
-      $("[value='" + filters[i] + "']").click();
+    for (var i = 0; i < filters.length; i++) {
+      $("[id='" + filters[i] + "']").click();
     }
+    $(".selectOptions").hide();
 
   }
 
