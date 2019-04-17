@@ -31,11 +31,35 @@
 .css_page {
   background: #F2F7F8;
 
+  .clearfilters.ctaBtn {
+    color: #189bb0;
+    font-family: SourceSansPro-SemiBold, arial, sans-serif;
+    background: transparent;
+    min-height: 60px;
+    border-radius: 0;
+    font-size: 16px;
+  }
+
   .ctaBtn.ctaBtn--secondary {
     color: #189bb0;
     background: transparent;
-    border-color: #189bb0;
+    border: 2px solid #189bb0;
     margin-left: 15px;
+    padding: 1.125rem 1.875rem 1.125rem 3.2rem;
+
+    &:hover {
+      color: #20b8d1;
+      border-color: #20b8d1;
+    }
+  }
+
+  .ctaBtn--graphic span,
+  .ctaBtn--secondary-graphic span {
+    background-color: #ffffff;
+  }
+
+  .row {
+    max-width: 100%;
   }
 }
 

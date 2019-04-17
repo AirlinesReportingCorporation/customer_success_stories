@@ -16,6 +16,30 @@ productLink: "https://www2.arccorp.com/products-participation/products/airline-b
 product: "Airline BI"
 */
 var data = [{
+    name: "Diane Mabard",
+    title: "President and CEO",
+    company: "Great GetAways Travel",
+    type: "agency",
+    quote: "The two biggest successes we’ve seen with Aria are the number of hours saved in completing reports for clients and the ability to see live data during airline meetings.",
+    shortQuote: "The two biggest successes we’ve seen with Aria are the number of hours saved in completing reports for clients and the ability to see live data during airline meetings.",
+    productLink: "https://www2.arccorp.com/products-participation/products/aria/",
+    product: "Aria",
+    caseStudy: "https://www2.arccorp.com/products-participation/case-studies/great-getaways-travel/",
+    productName: "Aria"
+  },
+  {
+    name: "Patricia Giordano",
+    title: "Airline Analyst",
+    company: "Direct Travel, Inc.",
+    type: "agency",
+    quote: "With several different back-office systems, it previously took a while to do the type of analysis that Agency BI can do in minutes. This alone has allowed the tool to pay for itself.",
+    shortQuote: "With several different back-office systems, it previously took a while to do the type of analysis that Agency BI can do in minutes.",
+    productLink: "https://www2.arccorp.com/products-participation/products/agency-bi/",
+    product: "Agency BI",
+    productName: "Agency BI"
+
+  },
+  {
     name: "Dominic Bernardo",
     title: "Head of Sales, North America ",
     company: "LOT Polish Airlines ",
@@ -47,7 +71,7 @@ var data = [{
     shortQuote: "Since we are so new to the industry, having a trusted partner to guide us is very powerful.",
     productLink: "https://www2.arccorp.com/products-participation/travel-agencies/become-an-arc-accredited-agent/",
     product: "resources ARC provides",
-    productName: "ARC Accreditation"
+    productName: "Settlement"
   },
 
   {
@@ -153,7 +177,7 @@ var data = [{
     productLink: "https://www2.arccorp.com/products-participation/travel-agencies/agency-participation/",
     product: "ARC participant",
     learnMore: "https://www2.arccorp.com/products-participation/travel-agencies/agency-participation/",
-    productName: "ARC Accreditation"
+    productName: "Settlement"
   },
   {
     name: "Maria Polanco",
@@ -246,7 +270,7 @@ var data = [{
     productLink: "https://www2.arccorp.com/products-participation/travel-agencies/agency-participation/",
     product: "benefit ARC brings",
     learnMore: "https://www2.arccorp.com/products-participation/travel-agencies/agency-participation/",
-    productName: "ARC Accreditation"
+    productName: "Settlement"
   },
   {
     name: "Gary Ballew",
@@ -609,11 +633,11 @@ function linkReplace(quote, product, productLink) {
 
 for (var i = 0; i < data.length; i++) {
 
-  var caseStudy = (data[i].caseStudy != null) ? '<a class="ctaBtn ctaBtn--secondary" style="margin: 0px 40px 20px 40px;" href="' + data[i].caseStudy + '">Download Case Study</a>' : ' ';
+  var caseStudy = (data[i].caseStudy != null) ? '<a class="ctaBtn ctaBtn--graphic ctaBtn--secondary" style="margin: 0px 40px 20px 40px;" href="' + data[i].caseStudy + '"><span><i class="icon-download"> </i></span> Download Case Study</a>' : ' ';
 
   var learnMore = (data[i].learnMore != null) ? '<a class="ctaBtn ctaBtn--secondary" style="margin: 0px 40px 20px 40px;" href="' + data[i].learnMore + '">Learn More</a>' : ' ';
 
-  var caseStudyGrid = (data[i].caseStudy != null) ? '<a class="ctaBtn ctaBtn--secondary" href="' + data[i].caseStudy + '?utm_source=customer_success_stories">Download Case Study</a>' : ' ';
+  var caseStudyGrid = (data[i].caseStudy != null) ? '<a class="ctaBtn ctaBtn--graphic ctaBtn--secondary" href="' + data[i].caseStudy + '?utm_source=customer_success_stories"><span><i class="icon-download"> </i></span> Download Case Study</a>' : ' ';
 
   var learnMoreGrid = (data[i].learnMore != null) ? '<a class="ctaBtn" href="' + data[i].learnMore + '">Learn More</a>' : ' ';
 
@@ -690,7 +714,7 @@ function toggleFilter() {
       $('#ARC-Specialist-Training').show();
       $('#Memo-Analyzer-for-Agencies').show();
       $('#TASF').show();
-      $('#ARC-Accreditation').show();
+      $('#Settlement').show();
       $("#Custom-Reports").show();
     } else if (checkedArray[0] == "carrier") {
       $('.productBox .selectOption').hide();
@@ -778,9 +802,19 @@ $(document).ready(function() {
     } else {
       if ($('.selectOptions').is(':visible')) {
         $('.selectOptions').hide();
+        toggleFilter();
       }
     }
 
+  });
+
+  $(".clearfilters").click(function() {
+    $('.customerBox .selectName').text("Customer Type");
+    $('.productBox .selectName').text("Product Name");
+    $(".productBox .selectOptions").hide();
+    $(".customerBox .selectOptions").hide();
+    checkedArray = ["", ""];
+    toggleFilter();
   });
 
   //check relevent checkboxes based off url filters
