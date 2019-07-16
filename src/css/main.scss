@@ -38,6 +38,9 @@
     min-height: 60px;
     border-radius: 0;
     font-size: 16px;
+    &:hover {
+      color: #189bb0;
+    }
   }
 
   .ctaBtn.ctaBtn--secondary {

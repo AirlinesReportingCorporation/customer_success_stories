@@ -15,7 +15,20 @@ shortQuote: "Airline BI helps us stay on top of trends with a weekly analysis of
 productLink: "https://www2.arccorp.com/products-participation/products/airline-bi/",
 product: "Airline BI"
 */
-var data = [{
+var data = [ 
+  {
+    name: "Dominic Bernardo",
+    title: "Head of Sales, North America ",
+    company: "LOT Polish Airlines ",
+    type: "carrier",
+    quote: "It’s really valuable whenever you’re trying to launch new routes to really make sure you have a finger on the pulse of how things are trending. Airline BI has helped us with speed to market in introducing new initiatives and tactics.",
+    shortQuote: "It’s really valuable whenever you’re trying to launch new routes to really make sure you have a finger on the pulse of how things are trending. Airline BI has helped us with speed to market in introducing new initiatives and tactics.",
+    productLink: "https://www2.arccorp.com/products-participation/products/airline-bi/",
+    product: "Airline BI",
+    caseStudy: "https://www2.arccorp.com/products-participation/case-studies/airline-bi-lot-polish-airlines/",
+    productName: "Airline BI"
+  },
+  {
     name: "Diane Mabard",
     title: "President and CEO",
     company: "Great GetAways Travel",
