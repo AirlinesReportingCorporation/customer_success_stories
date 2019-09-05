@@ -15,7 +15,7 @@ shortQuote: "Airline BI helps us stay on top of trends with a weekly analysis of
 productLink: "https://www2.arccorp.com/products-participation/products/airline-bi/",
 product: "Airline BI"
 */
-var data = [ 
+var data = [
   {
     name: "Dominic Bernardo",
     title: "Head of Sales, North America ",
@@ -539,17 +539,6 @@ var data = [
     shortQuote: "As predictors of travel volumes, ARC data has proven immensely valuable.",
     productLink: "https://www2.arccorp.com/products-participation/products/arc-custom-reports/",
     product: "ARC data",
-    productName: "ARC Custom Reports"
-  },
-  {
-    name: "Scott Gillespie",
-    title: "Manager Partner",
-    company: "tClara",
-    type: "edu",
-    quote: "ARC's incredibly deep data pool allows us to offer a breakthrough approach to airfare benchmarking.",
-    shortQuote: "ARC's incredibly deep data pool allows us to offer a breakthrough approach to airfare benchmarking.",
-    productLink: "https://www2.arccorp.com/products-participation/products/arc-custom-reports/",
-    product: "deep data pool",
     productName: "ARC Custom Reports"
   },
   {
