@@ -260,18 +260,7 @@ var data = [
     shortQuote: "We consider Itinerary Detail a roadmap.",
     productLink: "https://www2.arccorp.com/products-participation/products/itinerary-detail/",
     product: "Itinerary Detail",
-    productName: "Itinerary Detail"
-  },
-  {
-    name: "Francisca Frias",
-    title: "Commercial Director",
-    company: "TAME",
-    type: "carrier",
-    quote: "Airline BI has helped TAME manage our agency sales channel more effectively by offering us a clear and accurate view of our U.S. agency ticket sales. We're able to view agency performance by O&D and class of service, which helps us better communicate with our agency partners on their contract obligations. With up-to-date data we trust, we can prepare more detailed reports on TAME's performance – and benchmark our sales against the industry's. The tool is easy-to-use and very visual, helping us quickly identify trends and uncover new sales opportunities to excel our business strategies.",
-    shortQuote: "Airline BI has helped TAME manage our agency sales channel more effectively...",
-    productLink: "https://www2.arccorp.com/products-participation/products/airline-bi/",
-    product: "Airline BI",
-    productName: "Airline BI"
+    productName: "Itinerary Detail" 
   },
   {
     name: "Pam Zager",
