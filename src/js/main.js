@@ -808,16 +808,23 @@ $(document).ready(function() {
     toggleFilter();
   });
 
-  //check relevent checkboxes based off url filters
-  var urlParams = window.location.search;
+  var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
 
-  if (urlParams.indexOf("filters") > -1) {
-    var filters = urlParams.split("filters=")[1].split(',');
-    for (var i = 0; i < filters.length; i++) {
-      $("[id='" + filters[i] + "']").click();
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
     }
-    $(".selectOptions").hide();
+};
 
-  }
+var filters = getUrlParameter('filters');
+$("[id='" + filters + "']").click();
+$(".selectOptions").hide(); 
 
 })
