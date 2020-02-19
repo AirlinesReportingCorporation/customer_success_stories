@@ -17,6 +17,17 @@ product: "Airline BI"
 */
 var data = [
   {
+    name: "Mable Tang",
+    title: "Managing Director, Americas",
+    company: "Thai Airways",
+    type: "carrier", 
+    quote: "ARC’s Airline BI has been adopted by several of our teams at Thai Airways. For our Data Analytics team, the raw data in the tool helps them easily drill down to pinpoint where the trends are coming from and when. For our Sales team, the custom, interactive dashboards save them both time and money from having to navigate through raw data. Additionally, Airline BI makes presenting this data to our clients easy!",
+    shortQuote: "ARC’s Airline BI has been adopted by several of our teams at Thai Airways. For our Data Analytics team, the raw data in the tool helps them easily drill down to pinpoint where the trends are coming from and when. For our Sales team, the custom, interactive dashboards save them both time and money from having to navigate through raw data. ",
+    productLink: "https://www2.arccorp.com/products-participation/products/airline-bi/",
+    product: "Airline BI",
+    productName: "Airline BI"
+  },
+  {
     name: "Dominic Bernardo",
     title: "Head of Sales, North America ",
     company: "LOT Polish Airlines ",
@@ -542,12 +553,12 @@ var data = [
     productName: "Market Locator"
   },
   {
-    name: "Thomas Renault",
-    title: "Head of Sales",
+    name: "Francois Cantau",
+    title: "Head of Sales, U.S.",
     company: "La Compagnie",
     type: "carrier",
-    quote: "We use Airline BI to examine La Compagnie's market share on the routes we service. Having an aggregated view of how agencies are performing, reduces time on our end spent compiling sales data and offers us a benchmark of how we compare against the market. As a small airline, the tool is truly invaluable in helping us achieve our sales goals.",
-    shortQuote: "At a small airline, Airline BI is truly invaluable in helping us achieve our sales goals.",
+    quote: "ARC’s Airline BI is one of La Compagnie’s most valuable sources of information for comparing performance to its competitors and supporting the airline’s sales and revenue management departments in decision making. As a small-sized, agile organization, we need a tool that gives us access to data in both a flexible and comprehensive way, and thus, we will continue to need Airline BI. The product’s recent enhancement has offered impressive data visualizations and a faster speed to access—making the platform even more user-friendly. ",
+    shortQuote: "ARC’s Airline BI is one of La Compagnie’s most valuable sources of information for comparing performance to its competitors and supporting the airline’s sales and revenue management departments in decision making.",
     productLink: "https://www2.arccorp.com/products-participation/products/airline-bi",
     product: "Airline BI",
     productName: "Airline BI"

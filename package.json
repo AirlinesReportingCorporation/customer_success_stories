@@ -1,11 +1,12 @@
 {
-  "name": "Our_Data",
+  "name": "Customer-Success-Stories",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "webpack",
-    "start": "webpack --watch"
+    "start": "webpack --watch",
+    "build": "webpack"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
