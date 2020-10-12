@@ -472,13 +472,13 @@ var data = [
     company: "Direct Travel",
     type: "agency",
     quote:
-      "With ARC's TASF credit card processing system, the amount of time our staff has to spend charging a card is minimal. They are already working in the GDS, and with just a few keystrokes, they are done. This allows them to focus on what's important … selling travel and servicing their customers.",
+      "With ARC Pay, ARC's credit card processing system, the amount of time our staff has to spend charging a card is minimal. They are already working in the GDS, and with just a few keystrokes, they are done. This allows them to focus on what's important … selling travel and servicing their customers.",
     shortQuote:
-      "With TASF, ARC's credit card processing solution, the amount of time our staff has to spend charging a card is minimal.",
+      "With ARC Pay, ARC's credit card processing solution, the amount of time our staff has to spend charging a card is minimal.",
     productLink:
       "https://www2.arccorp.com/products-participation/products/travel-agency-service-fee/",
-    product: "TASF",
-    productName: "TASF"
+    product: "ARC Pay",
+    productName: "ARC Pay"
   },
   {
     name: "Liz Mandarino",
@@ -486,13 +486,13 @@ var data = [
     company: "World Travel",
     type: "agency",
     quote:
-      "ARC's TASF tool enables our tickets and service fees to bill simultaneously, so they appear next to each other on the customer's credit card statement, and that means easy reconciliation and fewer disputed charges. TASF also allows us to void charges we'd otherwise have to refund, and that saves us money.",
+      "ARC Pay enables our tickets and service fees to bill simultaneously, so they appear next to each other on the customer's credit card statement, and that means easy reconciliation and fewer disputed charges. ARC Pay also allows us to void charges we'd otherwise have to refund, and that saves us money.",
     shortQuote:
-      "TASF allows us to void charges we'd otherwise have to refund, and that saves us money.",
+      "ARC Pay allows us to void charges we'd otherwise have to refund, and that saves us money.",
     productLink:
       "https://www2.arccorp.com/products-participation/products/travel-agency-service-fee/",
-    product: "TASF",
-    productName: "TASF"
+    product: "ARC Pay",
+    productName: "ARC Pay"
   },
   {
     name: "Bryan Leibman",
@@ -500,13 +500,13 @@ var data = [
     company: "Frosch",
     type: "agency",
     quote:
-      "The speed at which my staff can add a service fee to a GDS reservation via ARC's TASF credit card tool is most efficient. TASF offers convenience, access to all card brands, back-office reconciliation and high transaction limits.",
+      "The speed at which my staff can add a service fee to a GDS reservation via ARC Pay, ARC's credit card tool is most efficient. ARC Pay offers convenience, access to all card brands, back-office reconciliation and high transaction limits.",
     shortQuote:
-      "TASF offers convenience, access to all card brands, back-office reconciliation and high transaction limits.",
+      "ARC Pay offers convenience, access to all card brands, back-office reconciliation and high transaction limits.",
     productLink:
       "https://www2.arccorp.com/products-participation/products/travel-agency-service-fee/",
-    product: "TASF",
-    productName: "TASF"
+    product: "ARC Pay",
+    productName: "ARC Pay"
   },
   {
     name: "Teresa Young",
@@ -985,7 +985,7 @@ function toggleFilter() {
       $("#Aria").show();
       $("#ARC-Specialist-Training").show();
       $("#Memo-Analyzer-for-Agencies").show();
-      $("#TASF").show();
+      $("#ARC-Pay").show();
       $("#Settlement").show();
       $("#Custom-Reports").show();
     } else if (checkedArray[0] == "carrier") {
