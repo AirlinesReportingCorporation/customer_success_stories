@@ -536,12 +536,12 @@ var data = [
     productName: "General"
   },
   {
-    name: "Greg Schulze",
-    title: "SVP, Global Tour & Transport",
-    company: "Expedia Inc.",
+    name: "Julie Kyse",
+    title: "Vice President Global Air Partners",
+    company: "Expedia Group",
     type: "agency",
     quote:
-      "We sit in a unique spot – among Expedia, Inc. sites alone, we had over 7.5 billion air searches over the past year. Analyzing these massive data sets with our partners at ARC gives us smart insights that we can pass along to travelers. And travelers benefit, because even small, simple insights iton the booking process – what time of year or day of week to book, for example – can yield significant savings.",
+      "Among Expedia Group sites alone, we see billions of air searches annually. Analyzing these massive data sets with our partners at ARC gives us smart insights that we can pass along to travelers. And travelers benefit because even small, simple insights into the booking process – what time of year or day of week to book, for example – can yield significant savings.",
     shortQuote:
       "Analyzing massive data sets with our partners at ARC gives us smart insights that we can pass along to travelers.",
     productLink:
